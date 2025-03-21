@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Ulang Tahun untuk mamih</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            /* Menambahkan gambar latar belakang */
+            background-image: url('mamih.jpg'); /* Pastikan nama file foto sesuai */
+            background-size: cover; /* Agar gambar menutupi seluruh layar */
+            background-position: center; /* Posisi gambar di tengah */
+            color: white; /* Warna teks agar terlihat jelas di atas gambar */
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks agar lebih jelas */
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks agar lebih jelas */
+        }
+        .heart {
+            color: #d6336c;
+            font-size: 2em;
+            cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
+            transition: transform 0.3s ease;
+        }
+        .heart:hover {
+            transform: scale(1.2); /* Membesar saat dihover */
+        }
+        /* Modal (pop-up) untuk video */
+        .modal {
+            display: none; /* Sembunyikan modal secara default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            color: #333; /* Warna teks di dalam modal */
+        }
+        .close {
+            color: #d6336c;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        video {
+            width: 100%;
+            max-height: 50vh; /* Maksimal tinggi video 50% dari tinggi layar */
+            border-radius: 10px;
+            margin-bottom: 20px; /* Jarak antara video dan teks */
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Ulang Tahun, mih!</h1>
+    <p>
+        Terima kasih untuk segala kasih sayang, pengorbanan, dan kehangatan yang selalu mamih berikan. 
+        mamih adalah wanita terhebat dalam hidupku. Semoga mamih selalu sehat, bahagia, dan panjang umur.
+    </p>
+    <!-- Tombol Love -->
+    <p class="heart" onclick="bukaVideo()">❤❤❤</p>
+    <p>Dengan cinta,<br>KOKO EL HANDSOME</p>
+
+    <!-- Modal untuk Video Lokal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="tutupVideo()">&times;</span>
+            <!-- Video Lokal -->
+            <video id="videoPlayer" controls>
+                <source src="kado_untuk_ibu.mp4" type="video/mp4">
+                Browser Anda tidak mendukung pemutaran video.
+            </video>
+            <!-- Teks Tambahan -->
+            <p>Maaf cuma bisa bikin kado ucapan lewat website bikinan koko selama seminggu.</p>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk membuka modal dan memutar video
+        function bukaVideo() {
+            var modal = document.getElementById('videoModal');
+            var videoPlayer = document.getElementById('videoPlayer');
+            modal.style.display = 'flex'; // Tampilkan modal
+            videoPlayer.play(); // Mulai memutar video
+        }
+
+        // Fungsi untuk menutup modal
+        function tutupVideo() {
+            var modal = document.getElementById('videoModal');
+            var videoPlayer = document.getElementById('videoPlayer');
+            modal.style.display = 'none'; // Sembunyikan modal
+            videoPlayer.pause(); // Hentikan video
+            videoPlayer.currentTime = 0; // Reset video ke awal
+        }
+    </script>
+</body>
+</html>
